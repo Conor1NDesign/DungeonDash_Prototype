@@ -356,7 +356,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4180513661195993667}
   - component: {fileID: 8627028231697772251}
-  - component: {fileID: 1935397705946293175}
   - component: {fileID: 2877578141136694850}
   - component: {fileID: 16548473496017760}
   m_Layer: 0
@@ -373,7 +372,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5410725827646879739}
-  m_LocalRotation: {x: -0.03824916, y: -0.0000000021492237, z: -8.2266194e-11, w: 0.99926823}
+  m_LocalRotation: {x: -0.038249157, y: 0.0000000021492237, z: 8.226619e-11, w: 0.99926823}
   m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -388,7 +387,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5410725827646879739}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -424,14 +423,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1935397705946293175
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5410725827646879739}
-  m_Enabled: 1
 --- !u!114 &2877578141136694850
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,7 +463,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5410725827646879739}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
   m_Name: 
@@ -618,7 +609,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7808906420364385795}
-  m_LocalRotation: {x: -0.03824916, y: -0.0000000021492237, z: -8.2266194e-11, w: 0.99926823}
+  m_LocalRotation: {x: -0.038249157, y: 0.0000000021492237, z: 8.226619e-11, w: 0.99926823}
   m_LocalPosition: {x: 0, y: 0, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -634,7 +625,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7808906420364385795}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
