@@ -336,7 +336,7 @@ PrefabInstance:
     - target: {fileID: 8695294764034082357, guid: 0297a6c57f8a4ec47a51fde7b586a6fa,
         type: 3}
       propertyPath: offlineScene
-      value: Assets/Scenes/MainMenu.unity
+      value: Assets/Scenes/SampleScene.unity
       objectReference: {fileID: 0}
     - target: {fileID: 8695294764034082357, guid: 0297a6c57f8a4ec47a51fde7b586a6fa,
         type: 3}
