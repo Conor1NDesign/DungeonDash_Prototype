@@ -40,9 +40,6 @@ public class CCPlayerController_2D : NetworkBehaviour
     [Range(0.01f, 1)]
     public float stoppingSpeedThreshold = 0.01f;
 
-    [Header("Camera Control Variables")]
-    public float cameraRotateSpeed;
-
     [Header("Player Turn Speed")]
     public float turnSpeed;
 
@@ -59,8 +56,8 @@ public class CCPlayerController_2D : NetworkBehaviour
     private float inputVector = 0;
 
     //CAMERA SETUP
-    public GameObject cameraToSpawn;
-    private GameObject myCamera;
+    //public GameObject cameraToSpawn;
+    //private GameObject myCamera;
 
     //GRAVITY VARIABLES
     [Header("Gravity Variables")]
@@ -93,14 +90,14 @@ public class CCPlayerController_2D : NetworkBehaviour
     //This function is only ran if the player has authority over the prefab.
     public override void OnStartAuthority()
     {
-        myCamera = Instantiate(cameraToSpawn);
-        myCamera.GetComponent<CameraFollow_2D>().whoSpawnedMe = gameObject;
+        //myCamera = Instantiate(cameraToSpawn);
+        //myCamera.GetComponent<CameraFollow_2D>().whoSpawnedMe = gameObject;
 
         //These components should all be disabled in the prefab. These are all components we want a player to control only on their prefab (controls, camera etc.)
         GetComponent<CCPlayerController_2D>().enabled = true;
-        myCamera.GetComponentInChildren<Camera>().enabled = true;
-        //GetComponentInChildren<CinemachineBrain>().enabled = true;
-        //GetComponentInChildren<CinemachineVirtualCamera>().enabled = true;
+        GetComponentInChildren<Camera>().enabled = true;
+        GetComponentInChildren<CinemachineBrain>().enabled = true;
+        GetComponentInChildren<CinemachineVirtualCamera>().enabled = true;
         GetComponent<PlayerInput>().enabled = true;
     }
 
