@@ -85,6 +85,8 @@ public class ProcGen_StartPoint : MonoBehaviour
             }
 
             //If you want things to spawn on the map after the layout has been generated, start new code from here
+            SpawnAnExit(); //Betcha can't guess what this does
+            
             if (networkManager.GetComponent<MyNetworkManager>().isHost)
             {
                 networkManager.GetComponent<MyNetworkManager>().SpawnTiles();
@@ -104,5 +106,24 @@ public class ProcGen_StartPoint : MonoBehaviour
             Debug.Log("Adding new connector to list " + GameObject.FindGameObjectsWithTag("Connector")[i]);
             connectionPoints.Add(GameObject.FindGameObjectsWithTag("Connector")[i]);
         }
+    }
+
+
+    public void SpawnAnExit()
+    {
+        int exitTile = Random.Range(0, activeTiles.Count);
+
+        if (activeTiles[exitTile].tag != "StartingTile")
+        {
+            bool exitGenerated = false;
+            activeTiles[exitTile].GetComponent<ProcGen_Tile>().GenerateExit();
+            if (exitGenerated)
+            {
+                Debug.Log("Exit generated successfully");
+                return;
+            }
+        }
+        else
+            SpawnAnExit();
     }
 }
