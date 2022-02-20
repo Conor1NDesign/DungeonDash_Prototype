@@ -168,6 +168,7 @@ public class CCPlayerController_2D : NetworkBehaviour
         }
     }
 
+    [Command]
     public void OnStun(float stunDuration)
     {
         if (currentMoveStatus != MovementStatus.Stunned)
