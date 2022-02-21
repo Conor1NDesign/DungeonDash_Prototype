@@ -155,7 +155,7 @@ public class CCPlayerController_2D : NetworkBehaviour
             //This loop handles "attacking" each of the Players in range
             for (int i = 0; i < playerTargets.Count; i++)
             {
-                playerTargets[i].GetComponent<CCPlayerController_2D>().OnStun(stunLength);
+                playerTargets[i].GetComponent<CCPlayerController_2D>().StunHostCheck(stunLength);
             }
 
             /* UN-COMMENT THIS LOOP LATER WHEN YOU DO NPC STUFF
@@ -167,12 +167,37 @@ public class CCPlayerController_2D : NetworkBehaviour
             */
         }
     }
+    
+    public void StunHostCheck(float stunDuration)
+    {
+        if (isClientOnly)
+        {
+            OnStunServerSide(stunDuration);
+        }
+        else
+        {
+            OnStunClientSide(stunDuration);
+        }
+    }
 
-    [Command]
-    public void OnStun(float stunDuration)
+    [Command(requiresAuthority = false)]
+    public void OnStunServerSide(float stunDuration)
     {
         if (currentMoveStatus != MovementStatus.Stunned)
         {
+            Debug.Log("Host stunned!");
+            currentMoveStatus = MovementStatus.Stunned;
+            animator.SetBool("isStunned", true);
+            Invoke("StunEnds", stunDuration);
+        }
+    }
+
+    [ClientRpc]
+    public void OnStunClientSide(float stunDuration)
+    {
+        if (currentMoveStatus != MovementStatus.Stunned)
+        {
+            Debug.Log("Client stunned!");
             currentMoveStatus = MovementStatus.Stunned;
             animator.SetBool("isStunned", true);
             Invoke("StunEnds", stunDuration);

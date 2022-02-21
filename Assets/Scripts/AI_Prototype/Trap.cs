@@ -11,7 +11,7 @@ public class Trap : MonoBehaviour
         {
             if (DoesStun)
             {
-                other.gameObject.GetComponent<CCPlayerController_2D>().OnStun(2);
+                other.gameObject.GetComponent<CCPlayerController_2D>().OnStunServerSide(2);
             }
 
             //Enter other trap effects here
